@@ -1,0 +1,17 @@
+{#
+  ./templates/pages/index.html.twig
+  Variables disponibles:
+    - pages Array(Page(id, titre, slug, texte, dateCreation))
+#}
+<ul class="nav navbar-nav">
+  {% for page in pages %}
+    <li>
+      <a href="{{ path('app_pages_show', {
+        'id': page.id,
+        'slug': page.slug
+      }) }}">
+        {{ page.titre }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

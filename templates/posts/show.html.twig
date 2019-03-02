@@ -1,0 +1,19 @@
+{#
+  ./templates/posts/show.html.twig
+  Variables disponibles:
+    - slug
+#}
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  {{ parent() }} - {{ slug }}
+{% endblock %}
+
+{% block content1 %}
+  <h3>Détails du post: {{ slug|upper }}</h3>
+  <div class="">
+    <a href="{{ path('app_posts_index') }}">
+      cliquez ici
+    </a>
+  </div>
+{% endblock %}

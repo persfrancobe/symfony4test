@@ -1,0 +1,20 @@
+{#
+  ./templates/actualite/show.html.twig
+  Variables disponibles:
+    - actualite Actualite(id, titre, texte, dateCreation, slug)
+#}
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  {{ actualite.titre }}
+{% endblock %}
+
+{% block content1 %}
+    <h1>{{ actualite.titre }}</h1>
+    <div class="">
+      <time>{{ actualite.dateCreation | date('d-m-Y') }}</time>
+    </div>
+    <div>
+      {{ actualite.texte }}
+    </div>
+{% endblock %}

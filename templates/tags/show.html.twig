@@ -1,0 +1,14 @@
+{#
+  ./templates/tags/show.html.twig
+  Variables disponibles:
+    - slug
+#}
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  {{ parent() }} - {{ slug }}
+{% endblock %}
+
+{% block content1 %}
+  <h3>Détails du tag: {{ slug }}</h3>
+{% endblock %}

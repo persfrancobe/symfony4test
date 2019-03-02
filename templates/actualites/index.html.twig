@@ -1,0 +1,18 @@
+{#
+  ./templates/actualites/index.html.twig
+  Variables disponibles:
+    - actualites Array(Actualite(id, titre, slug, texte, dateCreation))
+#}
+<h3>Actualités</h3>
+<ul>
+  {% for actualite in actualites %}
+    <li>
+      <a href="{{ path('app_actualites_show', {
+                      'id': actualite.id,
+                      'slug': actualite.slug
+                }) }}">
+        {{ actualite.titre }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

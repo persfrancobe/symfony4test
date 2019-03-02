@@ -1,0 +1,26 @@
+{#
+  ./templates/posts/index.html.twig
+  Variables disponibles:
+    -
+#}
+
+{% block title %}
+    Liste des auteurs
+{% endblock %}
+{% block content1 %}
+    <h3>Liste des auteurs</h3>
+    {% set letters='a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,v,u,w,x,y,z' |split(',') %}
+    <div>
+        {% for letter in letters %}
+            <a href="{{ render(controller('app_pages_index',{'letter':letter,'id':1,'slug':'editorial'})) }}" >{{ letter |upper }}</a> |
+        {% endfor %}
+    </div>
+    <ul>
+        {% for auteur in auteurs %}
+            <li>
+                <a href=""> {{ auteur.pseudo }} </a>
+
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

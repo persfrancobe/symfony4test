@@ -1,0 +1,20 @@
+# Route par défaut: app_homepage
+#   /
+#   > showAction du PageController
+#   Je suis sur le détail de la page 1
+app_homepage:
+    path: /
+    controller: App\Controller\PageController::showAction
+    defaults:
+        id: 1
+
+app_pages:
+    resource: "Routes/pages.yaml"
+    prefix: /pages
+    name_prefix: app_pages_
+
+app_actualites:
+    resource: "Routes/actualites.yaml"
+    prefix: /actualites
+    name_prefix: app_actualites_
+    

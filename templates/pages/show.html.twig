@@ -1,0 +1,27 @@
+{#
+  ./templates/pages/show.html.twig
+  Variables disponibles:
+    - page pages(id, titre, slug, texte, dateCreation)
+#}
+
+{% extends 'base.html.twig' %}
+
+  {% block title %}
+    {{ page.titre }}
+  {% endblock %}
+
+
+
+{% block content1 %}
+  <h1>{{ page.titre }}</h1>
+  <div>
+    {{ page.texte }}
+  </div>
+
+{% if page.id == 1 %}
+  {{ render(controller('App\\Controller\\AuteurController::indexByLetter')) }}
+{% elseif page.id == 3 %}
+  {{ render(controller('App\\Controller\\PostController::indexAction',{'vue':'list','limit':5})) }}
+{% endif %}
+
+{% endblock %}

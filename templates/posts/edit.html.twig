@@ -1,0 +1,14 @@
+{#
+  ./templates/posts/edit.html.twig
+  Variables disponibles:
+    - slug
+#}
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  {{ parent() }} - {{ slug }} - Edition
+{% endblock %}
+
+{% block content1 %}
+  <h3>Edition du post: {{ slug }}</h3>
+{% endblock %}
